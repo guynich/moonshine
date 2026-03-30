@@ -27,27 +27,27 @@ That’s an upstream packaging issue: the x86_64 static library inside the xcfra
 sudo xcode-select -s "/Applications/Xcode.app/Contents/Developer"
 ```
 
-If git lfs isn’t installed:
-```bash
-git clone
-
-brew install git-lfs
-git lfs install
-git lfs pull
-git lfs checkout
-```
-
-2. **Install CMake and codegen** (your environment currently lacks both)
+2. **Install CMake and codegen and git-lfs** (your environment currently lacks both)
 
 - Via Homebrew:
 
 ```bash
-brew install cmake codegen
+brew install cmake codegen git-lfs
+
+git lfs install
 ```
 
-3. **Build a universal macOS `Moonshine.xcframework` from source**
+3. **Build a universal macOS `Moonshine.xcframework` from source in this fork**
 
 ```bash
+cd
+git clone git@github.com:guynich/moonshine.git
+cd moonshine
+git lfs pull
+git lfs checkout
+
+git checkout build_x86
+
 cd ${HOME}/moonshine/swift
 ./scripts/build-macos-xcframework.sh
 ```
