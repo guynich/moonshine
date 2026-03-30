@@ -4,34 +4,23 @@ Swift Package for Moonshine Voice that supports both iOS and macOS.
 
 ## Building for macOS
 
-The `Moonshine.xcframework` currently only contains iOS slices. To use this package on macOS, you need to build a macOS framework and add it to the xcframework.
+The hosted `Moonshine.xcframework` artifacts have historically been missing
+some required symbols in the `x86_64` slice. If you need to run on both Apple
+Silicon and Intel Macs (or build a universal binary), build the macOS slices
+from source and generate `swift/Moonshine.xcframework` locally.
 
-### Option 1: Build macOS Framework and Add to XCFramework
+### Build a universal macOS XCFramework (arm64 + x86_64)
 
-1. Build the macOS framework:
 ```bash
-cd core
-mkdir -p build/build-macos
-cd build/build-macos
-cmake -G Xcode -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0 ..
-cmake --build . --config Release
+cd swift
+./scripts/build-macos-xcframework.sh
 ```
 
-2. Create a macOS framework from the build:
-```bash
-# The framework should be at: core/build/build-macos/Release/moonshine.framework
-# Or if built as a library, create a framework structure
-```
+This script uses `cmake` to build `moonshine.framework` twice (once per arch)
+and then uses `xcodebuild -create-xcframework` to combine them.
 
-3. Add macOS slice to the xcframework:
-```bash
-cd ../../ios
-xcodebuild -create-xcframework \
-    -framework ../core/build/build-macos/Release/moonshine.framework \
-    -framework Moonshine.xcframework/ios-arm64/moonshine.framework \
-    -framework Moonshine.xcframework/ios-arm64_x86_64-simulator/moonshine.framework \
-    -output Moonshine.xcframework
-```
+If `xcodebuild` errors with “active developer directory … CommandLineTools”,
+run `xcode-select` to point at your full Xcode installation.
 
 ### Option 2: Use System Library (Current Workaround)
 

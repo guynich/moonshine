@@ -3,71 +3,75 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45505035DE2510C526A310D4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A5E552E56AC2B8EDE068B3 /* main.swift */; };
+		3E3A1679CFE55B6652F037E3 /* MoonshineVoice in Frameworks */ = {isa = PBXBuildFile; productRef = B49620B694C41F3DF9C3652C /* MoonshineVoice */; };
+		DCBD868A51D518EE1C7BDF00 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5985099C8A7C589A228BB67A /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5BB2C0F05E65996AD61BB563 /* MicTranscription */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = text; path = MicTranscription; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8A5E552E56AC2B8EDE068B3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		45F5528F09348E4C65750FE2 /* swift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = swift; path = ../../../swift; sourceTree = SOURCE_ROOT; };
+		5765273161AD4EC53E5C7293 /* MicTranscription */ = {isa = PBXFileReference; includeInIndex = 0; path = MicTranscription; sourceTree = BUILT_PRODUCTS_DIR; };
+		5985099C8A7C589A228BB67A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B0E9FC6A9CDC860353851556 /* Frameworks */ = {
+		59BBC42752020E1614B84CA3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3A1679CFE55B6652F037E3 /* MoonshineVoice in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B110F2F5E40F3928EEFDC69 /* Packages */ = {
+		43438A03E37FCAD0645D0CBB /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				45F5528F09348E4C65750FE2 /* swift */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		5F93CCE2310DF20089E6C01A /* Products */ = {
+		5AB730832C9C8ADE48F609F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5BB2C0F05E65996AD61BB563 /* MicTranscription */,
+				5765273161AD4EC53E5C7293 /* MicTranscription */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7EEA7A59511F12BB6EA396A3 /* MicTranscription */ = {
+		C1CF4E971A3E610BC3E56B98 /* MicTranscription */ = {
 			isa = PBXGroup;
 			children = (
-				F8A5E552E56AC2B8EDE068B3 /* main.swift */,
+				5985099C8A7C589A228BB67A /* main.swift */,
 			);
 			name = MicTranscription;
 			path = Sources/MicTranscription;
 			sourceTree = "<group>";
 		};
-		B8B49A6A12013730B0F6054E = {
+		F6A5FD0A164DDA07B6EC29E5 = {
 			isa = PBXGroup;
 			children = (
-				7EEA7A59511F12BB6EA396A3 /* MicTranscription */,
-				0B110F2F5E40F3928EEFDC69 /* Packages */,
-				5F93CCE2310DF20089E6C01A /* Products */,
+				C1CF4E971A3E610BC3E56B98 /* MicTranscription */,
+				43438A03E37FCAD0645D0CBB /* Packages */,
+				5AB730832C9C8ADE48F609F9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AEC9D6327F59C52D0627B805 /* MicTranscription */ = {
+		03FB916DB3752A97AD45B37F /* MicTranscription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B713F5454E265C62AD032FE /* Build configuration list for PBXNativeTarget "MicTranscription" */;
+			buildConfigurationList = 34364A359AAE9F08A110926E /* Build configuration list for PBXNativeTarget "MicTranscription" */;
 			buildPhases = (
-				ABBBEF3A1627101EDF1CF8A0 /* Sources */,
-				B0E9FC6A9CDC860353851556 /* Frameworks */,
+				3E3883F2356308929CD2D0C7 /* Sources */,
+				59BBC42752020E1614B84CA3 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -75,55 +79,88 @@
 			);
 			name = MicTranscription;
 			packageProductDependencies = (
-				7F7B03E1028EB5161964044D /* MoonshineVoice */,
+				B49620B694C41F3DF9C3652C /* MoonshineVoice */,
 			);
 			productName = MicTranscription;
-			productReference = 5BB2C0F05E65996AD61BB563 /* MicTranscription */;
+			productReference = 5765273161AD4EC53E5C7293 /* MicTranscription */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DFF98CC662DE3DB440C0B0E /* Project object */ = {
+		B9F4D2A57097C4B8429695B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+				};
 			};
-			buildConfigurationList = 1C8F432409B555C4E3C0C7C1 /* Build configuration list for PBXProject "MicTranscription" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 4E49AEFD137EC363D8EAC19E /* Build configuration list for PBXProject "MicTranscription" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 				en,
 			);
-			mainGroup = B8B49A6A12013730B0F6054E;
+			mainGroup = F6A5FD0A164DDA07B6EC29E5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				E68EFCE52E5CBD663A132D80 /* XCRemoteSwiftPackageReference "moonshine-swift" */,
+				A03048E65417CF7FF77CBA87 /* XCLocalSwiftPackageReference "../../../swift" */,
 			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5AB730832C9C8ADE48F609F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AEC9D6327F59C52D0627B805 /* MicTranscription */,
+				03FB916DB3752A97AD45B37F /* MicTranscription */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ABBBEF3A1627101EDF1CF8A0 /* Sources */ = {
+		3E3883F2356308929CD2D0C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45505035DE2510C526A310D4 /* main.swift in Sources */,
+				DCBD868A51D518EE1C7BDF00 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6453A8621730B768147B7042 /* Release */ = {
+		4E8F9B1358F4DD7E010F0BA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.moonshine.MicTranscription;
+				PRODUCT_NAME = MicTranscription;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		5A76510D88E65D67294408B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.moonshine.MicTranscription;
+				PRODUCT_NAME = MicTranscription;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		5F8650EA3C61C5D12AE76DC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -179,37 +216,7 @@
 			};
 			name = Release;
 		};
-		ABE0F209FB523797D8A49155 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.moonshine.MicTranscription;
-				PRODUCT_NAME = MicTranscription;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 6.0;
-			};
-			name = Release;
-		};
-		D15635028FF2AFC95E44E652 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.moonshine.MicTranscription;
-				PRODUCT_NAME = MicTranscription;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 6.0;
-			};
-			name = Debug;
-		};
-		DB8B60644138BAEE309938F0 /* Debug */ = {
+		AE7989A9D8CB2E5CB48F7C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,44 +282,39 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C8F432409B555C4E3C0C7C1 /* Build configuration list for PBXProject "MicTranscription" */ = {
+		34364A359AAE9F08A110926E /* Build configuration list for PBXNativeTarget "MicTranscription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB8B60644138BAEE309938F0 /* Debug */,
-				6453A8621730B768147B7042 /* Release */,
+				5A76510D88E65D67294408B3 /* Debug */,
+				4E8F9B1358F4DD7E010F0BA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		7B713F5454E265C62AD032FE /* Build configuration list for PBXNativeTarget "MicTranscription" */ = {
+		4E49AEFD137EC363D8EAC19E /* Build configuration list for PBXProject "MicTranscription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D15635028FF2AFC95E44E652 /* Debug */,
-				ABE0F209FB523797D8A49155 /* Release */,
+				AE7989A9D8CB2E5CB48F7C51 /* Debug */,
+				5F8650EA3C61C5D12AE76DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		E68EFCE52E5CBD663A132D80 /* XCRemoteSwiftPackageReference "moonshine-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/moonshine-ai/moonshine-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.51;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		A03048E65417CF7FF77CBA87 /* XCLocalSwiftPackageReference "../../../swift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../swift;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7F7B03E1028EB5161964044D /* MoonshineVoice */ = {
+		B49620B694C41F3DF9C3652C /* MoonshineVoice */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E68EFCE52E5CBD663A132D80 /* XCRemoteSwiftPackageReference "moonshine-swift" */;
 			productName = MoonshineVoice;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7DFF98CC662DE3DB440C0B0E /* Project object */;
+	rootObject = B9F4D2A57097C4B8429695B1 /* Project object */;
 }
