@@ -1,3 +1,10 @@
+The following steps were assisted by Cursor chat.
+
+Tested on 
+* Mac mini 2018 (Intel i7, 32GB)
+* macOS Sequoia 15.7.5
+* XCode 16.4
+
 ### What’s actually failing (and why x86_64 can’t link)
 
 Your link errors (`Undefined symbols for architecture x86_64:
@@ -41,7 +48,7 @@ brew install cmake
 3. **Build a universal macOS `Moonshine.xcframework` from source**
 
 ```bash
-cd /Users/guynicholson/moonshine/swift
+cd ${HOME}/moonshine/swift
 ./scripts/build-macos-xcframework.sh
 ```
 
@@ -49,7 +56,7 @@ cd /Users/guynicholson/moonshine/swift
 - SwiftPM:
 
 ```bash
-cd /Users/guynicholson/moonshine/examples/macos/MicTranscription
+cd ${HOME}/moonshine/examples/macos/MicTranscription
 swift package reset
 rm -rf .build
 swift build
@@ -58,7 +65,7 @@ swift build
 - Xcode: regenerate the project (optional but recommended since `project.yml` expects the local package), then open and build:
 
 ```bash
-cd /Users/guynicholson/moonshine/examples/macos/MicTranscription
+cd ${HOME}/moonshine/examples/macos/MicTranscription
 xcodegen generate
 open MicTranscription.xcodeproj
 ```
@@ -67,6 +74,21 @@ open MicTranscription.xcodeproj
 swift run MicTranscription \
   --model-path="${HOME}/moonshine/test-assets/tiny-en" \
   --model-arch="MOONSHINE_MODEL_ARCH_TINY"
+```
+
+Example run.  I had to explicitly state the model location and architecture.
+```console
+$ swift run MicTranscription --model-path="${HOME}/moonshine/test-assets/tiny-en" --model-arch="MOONSHINE_MODEL_ARCH_TINY"
+Building for debugging...
+[1/1] Write swift-version--58304C5D6DBC2206.txt
+Build of product 'MicTranscription' complete! (0.28s)
+Listening to the microphone, press Ctrl+C to stop...
+3.17s: Line started: Test one.
+3.17s: Line text changed: Test one.
+3.17s: Line text changed: Test one, two, three, three.
+3.17s: Line text changed: Test one, two, three, four, five, five,
+3.17s: Line text changed: Test one, two, three, four, five.
+3.17s: Line completed: Test one, two, three, four, five.
 ```
 
 ### Notes
