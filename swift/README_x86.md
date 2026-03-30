@@ -2,7 +2,7 @@ The following steps were assisted by Cursor chat.
 
 Tested on 
 * Mac mini 2018 (Intel i7, 32GB)
-* macOS Sequoia 15.7.5
+* macOS Sequoia 15.7.4
 * XCode 16.4
 
 ### What’s actually failing (and why x86_64 can’t link)
