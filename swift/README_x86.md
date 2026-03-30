@@ -37,7 +37,7 @@ git lfs pull
 git lfs checkout
 ```
 
-2. **Install CMak amc codegene** (your environment currently lacks both)
+2. **Install CMake and codegen** (your environment currently lacks both)
 
 - Via Homebrew:
 
