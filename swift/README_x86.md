@@ -76,7 +76,8 @@ swift run MicTranscription \
   --model-arch="MOONSHINE_MODEL_ARCH_TINY"
 ```
 
-Example run.  I had to explicitly state the model location and architecture.
+Example run.  I had to explicitly state the model location and architecture.  Connect a USB microphone before running 
+this command.
 ```console
 $ swift run MicTranscription --model-path="${HOME}/moonshine/test-assets/tiny-en" --model-arch="MOONSHINE_MODEL_ARCH_TINY"
 Building for debugging...
@@ -90,6 +91,7 @@ Listening to the microphone, press Ctrl+C to stop...
 3.17s: Line text changed: Test one, two, three, four, five.
 3.17s: Line completed: Test one, two, three, four, five.
 ```
+* I'm not sure why the timestamp was "3.17" for all the lines.
 
 ### Notes
 
