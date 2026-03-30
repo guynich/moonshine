@@ -69,7 +69,7 @@ cd ${HOME}/moonshine/examples/macos/MicTranscription
 xcodegen generate
 open MicTranscription.xcodeproj
 ```
-
+The last command fails - the model path is not found.  Instead run this `swift` command.
 ```bash
 swift run MicTranscription \
   --model-path="${HOME}/moonshine/test-assets/tiny-en" \
