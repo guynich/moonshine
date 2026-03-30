@@ -27,7 +27,7 @@ That’s an upstream packaging issue: the x86_64 static library inside the xcfra
 sudo xcode-select -s "/Applications/Xcode.app/Contents/Developer"
 ```
 
-2. **Install CMake and codegen and git-lfs** (your environment currently lacks both)
+2. **Install CMake and codegen and git-lfs** (your environment currently lacks these tools)
 
 - Via Homebrew:
 
@@ -37,15 +37,14 @@ brew install cmake codegen git-lfs
 git lfs install
 ```
 
-3. **Build a universal macOS `Moonshine.xcframework` from source in this fork**
+3. **Build a universal macOS `Moonshine.xcframework` from source in a branch in this fork**
 
 ```bash
 cd
 git clone git@github.com:guynich/moonshine.git
-cd moonshine
-git lfs pull
-git lfs checkout
 
+cd moonshine
+git fetch origin build_x86
 git checkout build_x86
 
 cd ${HOME}/moonshine/swift
