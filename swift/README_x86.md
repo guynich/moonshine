@@ -37,12 +37,12 @@ git lfs pull
 git lfs checkout
 ```
 
-2. **Install CMake** (your environment currently lacks it; the script fails with `cmake: command not found`)
+2. **Install CMak amc codegene** (your environment currently lacks both)
 
 - Via Homebrew:
 
 ```bash
-brew install cmake
+brew install cmake codegen
 ```
 
 3. **Build a universal macOS `Moonshine.xcframework` from source**
@@ -69,14 +69,15 @@ cd ${HOME}/moonshine/examples/macos/MicTranscription
 xcodegen generate
 open MicTranscription.xcodeproj
 ```
-The last command fails - the model path is not found.  Instead run this `swift` command.
+The last command fails - the model path is not found.  Instead run this `swift` command specifying the model location 
+and architecture. 
 ```bash
 swift run MicTranscription \
   --model-path="${HOME}/moonshine/test-assets/tiny-en" \
   --model-arch="MOONSHINE_MODEL_ARCH_TINY"
 ```
 
-Example run.  I had to explicitly state the model location and architecture.  Connect a USB microphone before running 
+Example run.  Connect a USB microphone before running 
 this command.
 ```console
 $ swift run MicTranscription --model-path="${HOME}/moonshine/test-assets/tiny-en" --model-arch="MOONSHINE_MODEL_ARCH_TINY"
