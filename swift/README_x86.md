@@ -32,7 +32,7 @@ sudo xcode-select -s "/Applications/Xcode.app/Contents/Developer"
 - Via Homebrew:
 
 ```bash
-brew install cmake codegen git-lfs
+brew install cmake xcodegen git-lfs
 
 git lfs install
 ```
