@@ -1,6 +1,6 @@
 The following steps were assisted by Cursor chat.
 
-Tested on 
+Tested on
 * Mac mini 2018 (Intel i7, 32GB)
 * macOS Sequoia 15.7.4
 * XCode 16.4
@@ -68,15 +68,15 @@ cd ${HOME}/moonshine/examples/macos/MicTranscription
 xcodegen generate
 open MicTranscription.xcodeproj
 ```
-The last command fails - the model path is not found.  Instead run this `swift` command specifying the model location 
-and architecture. 
+The last command fails - the model path is not found.  Instead run this `swift` command specifying the model location
+and architecture.
 ```bash
 swift run MicTranscription \
   --model-path="${HOME}/moonshine/test-assets/tiny-en" \
   --model-arch="MOONSHINE_MODEL_ARCH_TINY"
 ```
 
-Example run.  Connect a USB microphone before running 
+Example run.  Connect a USB microphone before running
 this command.
 ```console
 $ swift run MicTranscription --model-path="${HOME}/moonshine/test-assets/tiny-en" --model-arch="MOONSHINE_MODEL_ARCH_TINY"
@@ -96,3 +96,40 @@ Listening to the microphone, press Ctrl+C to stop...
 ### Notes
 
 - Until `moonshine-swift` ships a fixed xcframework, **there’s no way to make Intel builds succeed using the hosted binary**; you must rebuild the macOS library slices yourself (or get an updated release that includes the C API symbols for x86_64).
+
+#### Streaming
+
+We can try the streaming model with this command.
+```bash
+swift run MicTranscription \
+--model-path="${HOME}/moonshine/test-assets/tiny-streaming-en" \
+--model-arch="MOONSHINE_MODEL_ARCH_TINY_STREAMING"
+```
+
+However the call fails.  The console states model ORT assets are missing.
+```console
+$ swift run MicTranscription --model-path="${HOME}/moonshine/test-assets/tiny-streaming-en"  --model-arch="MOONSHINE_MODEL_ARCH_TINY_STREAMING"
+Building for debugging...
+[1/1] Write swift-version--58304C5D6DBC2206.txt
+Build of product 'MicTranscription' complete! (0.34s)
+Thread 0x70000ab12000:moonshine-c-api.cpp:183:moonshine_load_transcriber_from_files(): Failed to load transcriber: Required encoder model file does not exist at path '/Users/guynicholson/moonshine/test-assets/tiny-streaming-en/encoder_model.ort'
+
+MicTranscription/main.swift:38: Fatal error: 'try!' expression unexpectedly raised an error: MoonshineVoice.MoonshineError.custom(message: "Failed to load transcriber: Unknown error", code: -1)
+
+💣 Program crashed: Illegal instruction at 0x00007ff8210936f8
+
+Thread 1 crashed:
+
+0 0x00007ff8210936f8 _assertionFailure(_:_:file:line:flags:) + 264 in libswiftCore.dylib
+1 0x00007ff8210eda64 swift_unexpectedError + 788 in libswiftCore.dylib
+2 main() + 5725 in MicTranscription at /Users/guynicholson/moonshine/examples/macos/MicTranscription/Sources/MicTranscription/main.swift:38:31
+
+    36│     }
+    37│
+    38│     let micTranscriber = try! MicTranscriber(modelPath: modelPath!, modelArch: modelArch!)
+      │                               ▲
+    39│     defer { micTranscriber.close() }
+    40│
+
+Backtrace took 1.22s
+```
